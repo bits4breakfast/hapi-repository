@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Hapi\Api;
+namespace HapiRepository\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Hapi\ApiException;
-use Hapi\Configuration;
-use Hapi\HeaderSelector;
-use Hapi\ObjectSerializer;
+use HapiRepository\ApiException;
+use HapiRepository\Configuration;
+use HapiRepository\HeaderSelector;
+use HapiRepository\ObjectSerializer;
 
 /**
  * RateApi Class Doc Comment
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class RateApi
 * @param  string $property_code Property code as designated in the PMS (required)
 * @param  string $rate_code Rate code (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Hapi\Model\Rate
+     * @return \HapiRepository\Model\Rate
      */
     public function getRate($property_code, $rate_code)
     {
@@ -111,13 +111,13 @@ class RateApi
 * @param  string $property_code Property code as designated in the PMS (required)
 * @param  string $rate_code Rate code (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Hapi\Model\Rate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \HapiRepository\Model\Rate, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRateWithHttpInfo($property_code, $rate_code)
     {
-        $returnType = '\Hapi\Model\Rate';
+        $returnType = '\HapiRepository\Model\Rate';
         $request = $this->getRateRequest($property_code, $rate_code);
 
         try {
@@ -176,21 +176,21 @@ $responseBody = $response->getBody();
             switch ($e->getCode()) {
 case 200:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Rate',
+                        '\HapiRepository\Model\Rate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 401:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 404:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,7 +234,7 @@ case 404:$data = ObjectSerializer::deserialize(
      */
     public function getRateAsyncWithHttpInfo($property_code, $rate_code)
     {
-        $returnType = '\Hapi\Model\Rate';
+        $returnType = '\HapiRepository\Model\Rate';
         $request = $this->getRateRequest($property_code, $rate_code);
 
         return $this->client
@@ -391,9 +391,9 @@ $defaultHeaders = [];
 *
      * Get rates by date range. Paging is included. Maximum value of returned rates is 1000
 *
-* @param  \Hapi\Model\SearchRequest $body body (required)
+* @param  \HapiRepository\Model\SearchRequest $body body (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -408,9 +408,9 @@ $defaultHeaders = [];
 *
      * Get rates by date range. Paging is included. Maximum value of returned rates is 1000
 *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -482,14 +482,14 @@ case 200:$data = ObjectSerializer::deserialize(
                     break;
 case 400:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 401:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -504,7 +504,7 @@ case 401:$data = ObjectSerializer::deserialize(
      *
      * Get rates by date range. Paging is included. Maximum value of returned rates is 1000
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -524,7 +524,7 @@ case 401:$data = ObjectSerializer::deserialize(
      *
      * Get rates by date range. Paging is included. Maximum value of returned rates is 1000
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -574,7 +574,7 @@ $responseBody = $response->getBody();
     /**
      * Create request for operation 'getRates'
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

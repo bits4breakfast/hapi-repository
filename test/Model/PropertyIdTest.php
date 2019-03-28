@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace Hapi;
+namespace HapiRepository;
 
 /**
  * PropertyIdTest Class Doc Comment
  *
  * @category    Class
  * @description Property id in HAPI system
- * @package     Hapi
+ * @package     HapiRepository
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

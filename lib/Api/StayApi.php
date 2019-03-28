@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Hapi\Api;
+namespace HapiRepository\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Hapi\ApiException;
-use Hapi\Configuration;
-use Hapi\HeaderSelector;
-use Hapi\ObjectSerializer;
+use HapiRepository\ApiException;
+use HapiRepository\Configuration;
+use HapiRepository\HeaderSelector;
+use HapiRepository\ObjectSerializer;
 
 /**
  * StayApi Class Doc Comment
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class StayApi
 * @param  string $property_code Property code as designated in the PMS (required)
 * @param  string $reservation_id PMS Reservation id (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Hapi\Model\Stay
+     * @return \HapiRepository\Model\Stay
      */
     public function getStays($property_code, $reservation_id)
     {
@@ -111,13 +111,13 @@ class StayApi
 * @param  string $property_code Property code as designated in the PMS (required)
 * @param  string $reservation_id PMS Reservation id (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Hapi\Model\Stay, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \HapiRepository\Model\Stay, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaysWithHttpInfo($property_code, $reservation_id)
     {
-        $returnType = '\Hapi\Model\Stay';
+        $returnType = '\HapiRepository\Model\Stay';
         $request = $this->getStaysRequest($property_code, $reservation_id);
 
         try {
@@ -176,21 +176,21 @@ $responseBody = $response->getBody();
             switch ($e->getCode()) {
 case 200:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Stay',
+                        '\HapiRepository\Model\Stay',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 401:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 404:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,7 +234,7 @@ case 404:$data = ObjectSerializer::deserialize(
      */
     public function getStaysAsyncWithHttpInfo($property_code, $reservation_id)
     {
-        $returnType = '\Hapi\Model\Stay';
+        $returnType = '\HapiRepository\Model\Stay';
         $request = $this->getStaysRequest($property_code, $reservation_id);
 
         return $this->client
@@ -391,9 +391,9 @@ $defaultHeaders = [];
 *
      * Get stays by date range. Paging is included. Maximum value of returned stays is 1000
 *
-* @param  \Hapi\Model\SearchRequest $body body (required)
+* @param  \HapiRepository\Model\SearchRequest $body body (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -408,9 +408,9 @@ $defaultHeaders = [];
 *
      * Get stays by date range. Paging is included. Maximum value of returned stays is 1000
 *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -482,14 +482,14 @@ case 200:$data = ObjectSerializer::deserialize(
                     break;
 case 400:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 401:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -504,7 +504,7 @@ case 401:$data = ObjectSerializer::deserialize(
      *
      * Get stays by date range. Paging is included. Maximum value of returned stays is 1000
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -524,7 +524,7 @@ case 401:$data = ObjectSerializer::deserialize(
      *
      * Get stays by date range. Paging is included. Maximum value of returned stays is 1000
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -574,7 +574,7 @@ $responseBody = $response->getBody();
     /**
      * Create request for operation 'searchStays'
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -1,4 +1,4 @@
-# Hapi\RateApi
+# HapiRepository\RateApi
 
 All URIs are relative to *https://hapicloud-dev.apigee.net/repository*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getRates**](RateApi.md#getRates) | **POST** /rates/search | Get rates by date range. Paging is included. Maximum value of returned rates is 1000
 
 # **getRate**
-> \Hapi\Model\Rate getRate($property_code, $rate_code)
+> \HapiRepository\Model\Rate getRate($property_code, $rate_code)
 
 Get rate by rateCode
 
@@ -17,11 +17,11 @@ Get rate by rateCode
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: Bearer
-$config = Hapi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Hapi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Hapi\Api\RateApi(
+$apiInstance = new HapiRepository\Api\RateApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Hapi\Model\Rate**](../Model/Rate.md)
+[**\HapiRepository\Model\Rate**](../Model/Rate.md)
 
 ### Authorization
 
@@ -71,17 +71,17 @@ Get rates by date range. Paging is included. Maximum value of returned rates is 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: Bearer
-$config = Hapi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Hapi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Hapi\Api\RateApi(
+$apiInstance = new HapiRepository\Api\RateApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Hapi\Model\SearchRequest(); // \Hapi\Model\SearchRequest | 
+$body = new \HapiRepository\Model\SearchRequest(); // \HapiRepository\Model\SearchRequest | 
 
 try {
     $result = $apiInstance->getRates($body);
@@ -96,7 +96,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Hapi\Model\SearchRequest**](../Model/SearchRequest.md)|  |
+ **body** | [**\HapiRepository\Model\SearchRequest**](../Model/SearchRequest.md)|  |
 
 ### Return type
 

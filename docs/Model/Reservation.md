@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**property_id** | [**\Hapi\Model\PropertyId**](PropertyId.md) |  | [optional] 
+**property_id** | [**\HapiRepository\Model\PropertyId**](PropertyId.md) |  | [optional] 
 **id** | **string** | pms reservation id and object key | [optional] 
 **booking_confirmation_id** | **string** | crs reservation id | [optional] 
 **arrival_date** | **string** | check-in date, in YYYY-MM-DD format | [optional] 
@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 **adults** | **int** |  | [optional] 
 **children** | **int** |  | [optional] 
 **status** | **string** | current status of reservation | [optional] 
-**guests** | [**\Hapi\Model\Guest[]**](Guest.md) |  | [optional] 
-**profiles** | [**\Hapi\Model\Profile[]**](Profile.md) |  | [optional] 
-**room_stays** | [**\Hapi\Model\RoomStay[]**](RoomStay.md) |  | [optional] 
-**comments** | [**\Hapi\Model\Comment[]**](Comment.md) |  | [optional] 
+**guests** | [**\HapiRepository\Model\Guest[]**](Guest.md) |  | [optional] 
+**profiles** | [**\HapiRepository\Model\Profile[]**](Profile.md) |  | [optional] 
+**room_stays** | [**\HapiRepository\Model\RoomStay[]**](RoomStay.md) |  | [optional] 
+**comments** | [**\HapiRepository\Model\Comment[]**](Comment.md) |  | [optional] 
 **repository_created** | **string** | repository create date in YYYY-MM-DDThh:mm:ss.sss format | [optional] 
 **repository_updated** | **string** | repository update date in YYYY-MM-DDThh:mm:ss.sss format | [optional] 
 

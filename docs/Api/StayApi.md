@@ -1,4 +1,4 @@
-# Hapi\StayApi
+# HapiRepository\StayApi
 
 All URIs are relative to *https://hapicloud-dev.apigee.net/repository*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**searchStays**](StayApi.md#searchStays) | **POST** /stays/search | Get stays by date range. Paging is included. Maximum value of returned stays is 1000
 
 # **getStays**
-> \Hapi\Model\Stay getStays($property_code, $reservation_id)
+> \HapiRepository\Model\Stay getStays($property_code, $reservation_id)
 
 Get stays by reservation number
 
@@ -17,11 +17,11 @@ Get stays by reservation number
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: Bearer
-$config = Hapi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Hapi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Hapi\Api\StayApi(
+$apiInstance = new HapiRepository\Api\StayApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Hapi\Model\Stay**](../Model/Stay.md)
+[**\HapiRepository\Model\Stay**](../Model/Stay.md)
 
 ### Authorization
 
@@ -71,17 +71,17 @@ Get stays by date range. Paging is included. Maximum value of returned stays is 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: Bearer
-$config = Hapi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Hapi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Hapi\Api\StayApi(
+$apiInstance = new HapiRepository\Api\StayApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Hapi\Model\SearchRequest(); // \Hapi\Model\SearchRequest | 
+$body = new \HapiRepository\Model\SearchRequest(); // \HapiRepository\Model\SearchRequest | 
 
 try {
     $result = $apiInstance->searchStays($body);
@@ -96,7 +96,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Hapi\Model\SearchRequest**](../Model/SearchRequest.md)|  |
+ **body** | [**\HapiRepository\Model\SearchRequest**](../Model/SearchRequest.md)|  |
 
 ### Return type
 

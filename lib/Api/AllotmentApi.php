@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Hapi\Api;
+namespace HapiRepository\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Hapi\ApiException;
-use Hapi\Configuration;
-use Hapi\HeaderSelector;
-use Hapi\ObjectSerializer;
+use HapiRepository\ApiException;
+use HapiRepository\Configuration;
+use HapiRepository\HeaderSelector;
+use HapiRepository\ObjectSerializer;
 
 /**
  * AllotmentApi Class Doc Comment
  *
  * @category Class
- * @package  Hapi
+ * @package  HapiRepository
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class AllotmentApi
 * @param  string $property_code Property code as designated in the PMS (required)
 * @param  string $id Identifier of allotment record in the external system (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Hapi\Model\Allotment
+     * @return \HapiRepository\Model\Allotment
      */
     public function getAllotment($property_code, $id)
     {
@@ -111,13 +111,13 @@ class AllotmentApi
 * @param  string $property_code Property code as designated in the PMS (required)
 * @param  string $id Identifier of allotment record in the external system (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Hapi\Model\Allotment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \HapiRepository\Model\Allotment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllotmentWithHttpInfo($property_code, $id)
     {
-        $returnType = '\Hapi\Model\Allotment';
+        $returnType = '\HapiRepository\Model\Allotment';
         $request = $this->getAllotmentRequest($property_code, $id);
 
         try {
@@ -176,21 +176,21 @@ $responseBody = $response->getBody();
             switch ($e->getCode()) {
 case 200:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Allotment',
+                        '\HapiRepository\Model\Allotment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 401:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 404:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,7 +234,7 @@ case 404:$data = ObjectSerializer::deserialize(
      */
     public function getAllotmentAsyncWithHttpInfo($property_code, $id)
     {
-        $returnType = '\Hapi\Model\Allotment';
+        $returnType = '\HapiRepository\Model\Allotment';
         $request = $this->getAllotmentRequest($property_code, $id);
 
         return $this->client
@@ -391,10 +391,10 @@ $defaultHeaders = [];
 *
      * Search allotments by date range. Paging is included. Maximum value of returned allotments is 1000
 *
-* @param  \Hapi\Model\SearchRequest $body body (required)
+* @param  \HapiRepository\Model\SearchRequest $body body (required)
 * @param  string $strategy Type of the search strategy. Could be range or update.&lt;br&gt;In a case of range strategy records will be searched by their effectiveDate / expireDate instead of searching by updated field in a case of update strategy (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -409,10 +409,10 @@ $defaultHeaders = [];
 *
      * Search allotments by date range. Paging is included. Maximum value of returned allotments is 1000
 *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 * @param  string $strategy Type of the search strategy. Could be range or update.&lt;br&gt;In a case of range strategy records will be searched by their effectiveDate / expireDate instead of searching by updated field in a case of update strategy (required)
 *
-     * @throws \Hapi\ApiException on non-2xx response
+     * @throws \HapiRepository\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -484,14 +484,14 @@ case 200:$data = ObjectSerializer::deserialize(
                     break;
 case 400:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
 case 401:$data = ObjectSerializer::deserialize(
                         $content,
-                        '\Hapi\Model\Error',
+                        '\HapiRepository\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -506,7 +506,7 @@ case 401:$data = ObjectSerializer::deserialize(
      *
      * Search allotments by date range. Paging is included. Maximum value of returned allotments is 1000
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 * @param  string $strategy Type of the search strategy. Could be range or update.&lt;br&gt;In a case of range strategy records will be searched by their effectiveDate / expireDate instead of searching by updated field in a case of update strategy (required)
 *
      * @throws \InvalidArgumentException
@@ -527,7 +527,7 @@ case 401:$data = ObjectSerializer::deserialize(
      *
      * Search allotments by date range. Paging is included. Maximum value of returned allotments is 1000
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 * @param  string $strategy Type of the search strategy. Could be range or update.&lt;br&gt;In a case of range strategy records will be searched by their effectiveDate / expireDate instead of searching by updated field in a case of update strategy (required)
 *
      * @throws \InvalidArgumentException
@@ -578,7 +578,7 @@ $responseBody = $response->getBody();
     /**
      * Create request for operation 'searchAllotments'
      *
-* @param  \Hapi\Model\SearchRequest $body (required)
+* @param  \HapiRepository\Model\SearchRequest $body (required)
 * @param  string $strategy Type of the search strategy. Could be range or update.&lt;br&gt;In a case of range strategy records will be searched by their effectiveDate / expireDate instead of searching by updated field in a case of update strategy (required)
 *
      * @throws \InvalidArgumentException
