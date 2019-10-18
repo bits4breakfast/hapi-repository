@@ -4,22 +4,29 @@ All URIs are relative to *https://hapicloud-dev.apigee.net/repository*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getStays**](StayApi.md#getStays) | **GET** /stays/{propertyCode}/{reservationId} | Get stays by reservation number
-[**searchStays**](StayApi.md#searchStays) | **POST** /stays/search | Get stays by date range. Paging is included. Maximum value of returned stays is 1000
+[**getStay**](StayApi.md#getStay) | **GET** /stays/{propertyCode}/{reservationId} | Get reservation by reservation id
+[**searchStays**](StayApi.md#searchStays) | **POST** /stays/search | Get stays by date range. Paging is included. The maximum number of returned stays is 1000
 
-# **getStays**
-> \HapiRepository\Model\Stay getStays($property_code, $reservation_id)
 
-Get stays by reservation number
+
+## getStay
+
+> \HapiRepository\Model\Stay getStay($property_code, $reservation_id)
+
+Get reservation by reservation id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 // Configure API key authorization: Bearer
 $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new HapiRepository\Api\StayApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -27,24 +34,25 @@ $apiInstance = new HapiRepository\Api\StayApi(
     new GuzzleHttp\Client(),
     $config
 );
-$property_code = "property_code_example"; // string | Property code as designated in the PMS
-$reservation_id = "reservation_id_example"; // string | PMS Reservation id
+$property_code = 'property_code_example'; // string | Property code as designated in the PMS
+$reservation_id = 'reservation_id_example'; // string | PMS Reservation id
 
 try {
-    $result = $apiInstance->getStays($property_code, $reservation_id);
+    $result = $apiInstance->getStay($property_code, $reservation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StayApi->getStays: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StayApi->getStay: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **property_code** | [**string**](../Model/.md)| Property code as designated in the PMS |
- **reservation_id** | [**string**](../Model/.md)| PMS Reservation id |
+ **property_code** | **string**| Property code as designated in the PMS |
+ **reservation_id** | **string**| PMS Reservation id |
 
 ### Return type
 
@@ -56,24 +64,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **searchStays**
-> object searchStays($body)
 
-Get stays by date range. Paging is included. Maximum value of returned stays is 1000
+## searchStays
+
+> \HapiRepository\Model\RecordSet searchStays($repository_search_request)
+
+Get stays by date range. Paging is included. The maximum number of returned stays is 1000
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 // Configure API key authorization: Bearer
 $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = HapiRepository\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new HapiRepository\Api\StayApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -81,10 +97,10 @@ $apiInstance = new HapiRepository\Api\StayApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \HapiRepository\Model\SearchRequest(); // \HapiRepository\Model\SearchRequest | 
+$repository_search_request = new \HapiRepository\Model\RepositorySearchRequest(); // \HapiRepository\Model\RepositorySearchRequest | 
 
 try {
-    $result = $apiInstance->searchStays($body);
+    $result = $apiInstance->searchStays($repository_search_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StayApi->searchStays: ', $e->getMessage(), PHP_EOL;
@@ -94,13 +110,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\HapiRepository\Model\SearchRequest**](../Model/SearchRequest.md)|  |
+ **repository_search_request** | [**\HapiRepository\Model\RepositorySearchRequest**](../Model/RepositorySearchRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\HapiRepository\Model\RecordSet**](../Model/RecordSet.md)
 
 ### Authorization
 
@@ -108,8 +125,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
