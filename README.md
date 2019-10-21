@@ -98,7 +98,7 @@ Class | Method | HTTP request | Description
 *ProfileApi* | [**searchProfiles**](docs/Api/ProfileApi.md#searchprofiles) | **POST** /profiles/search | Get profiles by date range. Paging is included. The maximum number of returned profiles is 1000
 *RateApi* | [**getRate**](docs/Api/RateApi.md#getrate) | **GET** /rates/{propertyCode}/{id} | Get rate by rateCode
 *RateApi* | [**searchRates**](docs/Api/RateApi.md#searchrates) | **POST** /rates/search | Get rates by date range. Paging is included. The maximum number of returned rates is 1000
-*ReservationApi* | [**getReservation**](docs/Api/ReservationApi.md#getreservation) | **GET** /reservation/{propertyCode}/{id} | Get stays by reservation number
+*ReservationApi* | [**getReservation**](docs/Api/ReservationApi.md#getreservation) | **GET** /reservations/{propertyCode}/{id} | Get stays by reservation number
 *ReservationApi* | [**searchReservations**](docs/Api/ReservationApi.md#searchreservations) | **POST** /reservations/search | Get reservations by date range. Paging is included. The maximum number of returned reservations is 1000
 *StayApi* | [**getStay**](docs/Api/StayApi.md#getstay) | **GET** /stays/{propertyCode}/{reservationId} | Get reservation by reservation id
 *StayApi* | [**searchStays**](docs/Api/StayApi.md#searchstays) | **POST** /stays/search | Get stays by date range. Paging is included. The maximum number of returned stays is 1000

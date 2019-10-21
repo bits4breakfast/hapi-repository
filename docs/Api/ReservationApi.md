@@ -4,7 +4,7 @@ All URIs are relative to *https://hapicloud-dev.apigee.net/repository*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getReservation**](ReservationApi.md#getReservation) | **GET** /reservation/{propertyCode}/{id} | Get stays by reservation number
+[**getReservation**](ReservationApi.md#getReservation) | **GET** /reservations/{propertyCode}/{id} | Get stays by reservation number
 [**searchReservations**](ReservationApi.md#searchReservations) | **POST** /reservations/search | Get reservations by date range. Paging is included. The maximum number of returned reservations is 1000
 
 

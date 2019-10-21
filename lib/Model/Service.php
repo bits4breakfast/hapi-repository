@@ -203,6 +203,8 @@ class Service implements ModelInterface, ArrayAccess
     const COST_TYPE_STAY = 'PER_STAY';
     const COST_TYPE_NIGHT = 'PER_NIGHT';
     const COST_TYPE_WEEK = 'PER_WEEK';
+    const COST_TYPE__USE = 'PER_USE';
+    const COST_TYPE_ADULT_PER_NIGHT = 'PER_ADULT_PER_NIGHT';
     const COST_TYPE_PERSON_PER_NIGHT = 'PER_PERSON_PER_NIGHT';
     
 
@@ -231,6 +233,8 @@ class Service implements ModelInterface, ArrayAccess
             self::COST_TYPE_STAY,
             self::COST_TYPE_NIGHT,
             self::COST_TYPE_WEEK,
+            self::COST_TYPE__USE,
+            self::COST_TYPE_ADULT_PER_NIGHT,
             self::COST_TYPE_PERSON_PER_NIGHT,
         ];
     }

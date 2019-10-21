@@ -357,7 +357,7 @@ class ReservationApi
             );
         }
 
-        $resourcePath = '/reservation/{propertyCode}/{id}';
+        $resourcePath = '/reservations/{propertyCode}/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

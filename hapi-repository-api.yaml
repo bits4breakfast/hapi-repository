@@ -290,7 +290,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/TokenIsInvalidError"
-  /reservation/{propertyCode}/{id}:
+  /reservations/{propertyCode}/{id}:
     get:
       tags:
       - "Reservation"
@@ -1374,6 +1374,8 @@ components:
           - "PER_STAY"
           - "PER_NIGHT"
           - "PER_WEEK"
+          - "PER_USE"
+          - "PER_ADULT_PER_NIGHT"
           - "PER_PERSON_PER_NIGHT"
         quantity:
           type: "integer"
