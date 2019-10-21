@@ -1,5 +1,5 @@
 {
-    "name": "bits4brekfast/hapi-repository",
+    "name": "bits4breakfast/hapi-repository",
     "description": "API for retrieving objects from HAPI repository",
     "keywords": [
         "openapitools",
